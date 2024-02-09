@@ -7,8 +7,8 @@ type HomePageCardProps = {
 
 export const HomePageCard: React.FC<HomePageCardProps> = ({ title, description }) => {
     return (
-        <Card style={{ width: '300px', height: '300px' }} className="flex border-2 border-black p-6 shadow-xl">
-            <Typography className="text-2xl text-secondary font-bold text-center my-1">{title}</Typography>
+        <Card style={{ width: '300px', height: '300px' }} className="flex justify-center items-center border-2 border-black shadow-xl p-2">
+            <Typography className="text-2xl text-secondary font-bold">{title}</Typography>
             <Typography className="text-center">{description}</Typography>
         </Card>
     )
