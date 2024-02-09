@@ -8,13 +8,13 @@ export const Header = () => {
             <nav>
                 <ul className="flex gap-8">
                     <li >
-                        <a className="text-3xl hover:text-red-700" href="#">Strona główna</a>
+                        <a className="text-xl lg:text-3xl hover:text-red-700" href="#">Strona główna</a>
                     </li>
                     <li>
-                        <a className="text-3xl hover:text-red-700" href="#">Galeria</a>
+                        <a className="text-xl lg:text-3xl hover:text-red-700" href="#">Galeria</a>
                     </li>
                     <li>
-                        <a className="text-3xl hover:text-red-700" href="#">Kontakt</a>
+                        <a className="text-xl lg:text-3xl hover:text-red-700" href="#">Kontakt</a>
                     </li>
                 </ul>
             </nav>
