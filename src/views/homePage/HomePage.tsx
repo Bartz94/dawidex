@@ -2,13 +2,25 @@ import { Typography } from "@material-tailwind/react"
 import { useTranslation } from "react-i18next"
 import { PageLayout } from "../components/PageLayout"
 import { HomePageCard } from "./components/HomePageCard"
+import { FormEvent, useState } from "react"
+import { Button, Input, Textarea } from "@material-tailwind/react"
 
 export const HomePage = () => {
     const { t } = useTranslation()
+    const [email, setEmail] = useState('dawidex@wp.pl');
+    const [subject, setSubject] = useState('');
+    const [body, setBody] = useState('');
+
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailtoLink;
+    };
+
     return (
         <PageLayout>
-            <div className='h-2/3 flex justify-center items-center bg-[url("../images/francesca-tosolini-tHkJAMcO3QE-unsplash.jpg")] bg-fixed bg-cover '>
-                <Typography className="text-3xl lg:text-5xl   text-white  font-bold text-center">
+            <div className='h-2/3 flex justify-center items-center bg-[url("../images/home-img-0.jpg")] bg-fixed bg-cover '>
+                <Typography className="text-3xl lg:text-5xl text-white  font-bold text-center">
                     Witamy w DAWIDEX - Twój partner w rewitalizacji przestrzeni i tworzeniu wymarzonych wnętrz!
                 </Typography>
             </div>
@@ -30,7 +42,7 @@ export const HomePage = () => {
 
 
             <div className="my-20 px-1 lg:px-20 flex flex-col lg:flex-row justify-center lg:justify-around items-center">
-                <img className="w-full lg:w-1/3 shadow-xl mb-8 lg:mb-0" src="/images/charlesdeluvio-LyQi9DS7AEg-unsplash.jpg" alt="Opis grafiki" />
+                <img className="w-full lg:w-1/3 shadow-xl mb-8 lg:mb-0" src="/images/home-img2.jpg" alt="Opis grafiki" />
 
                 <div className="p-5 w-full lg:w-2/3 text-center">
                     <Typography className="text-3xl lg:text-5xl font-bold mb-10">
@@ -60,31 +72,114 @@ export const HomePage = () => {
 
 
             <div className="my-10 px-20 flex flex-col items-center justify-center flex-wrap grow">
-                <Typography className="text-3xl lg:text-5xl font-bold ">
+                <Typography className="text-3xl lg:text-5xl font-bold">
                     Nasze usługi
                 </Typography>
 
-                <ul className="list-inside list-none">
-                    <li className="flex items-center mb-2">
-                        <span className="material-symbols-outlined">
+                <ul className="list-inside list-none my-10">
+                    <li className="flex text-sm lg:text-xl items-center mb-2">
+                        <span className="material-symbols-outlined mx-2 text-red">
                             done
                         </span>
                         Kompleksowe remonty mieszkań i biur z projektem lub bez
                     </li>
-                    <li className="flex items-center mb-2">
-                        <span className="material-symbols-outlined">
+                    <li className="flex text-sm lg:text-xl items-center mb-2">
+                        <span className="material-symbols-outlined mx-2 text-red">
                             done
                         </span>
                         Kompleksowe remonty łazienek z projektem lub bez
                     </li>
-                    <li className="flex items-center mb-2">
-                        <span className="material-symbols-outlined">
+                    <li className="flex text-sm lg:text-xl items-center mb-2">
+                        <span className="material-symbols-outlined mx-2 text-red">
                             done
                         </span>
                         Kompleksowy montaż kuchni (podłączenie zmywarki, zlewu, okapu itd.)
                     </li>
-                    {/* Pozostałe elementy listy */}
+                    <li className="flex text-sm lg:text-xl items-center mb-2">
+                        <span className="material-symbols-outlined mx-2 text-red">
+                            done
+                        </span>
+                        Usługi elektryczne, glazurnicze, hydrauliczne
+                    </li>
+                    <li className="flex text-sm lg:text-xl items-center mb-2">
+                        <span className="material-symbols-outlined mx-2 text-red">
+                            done
+                        </span>
+                        Malowanie, szpachlowanie, murowanie ścian, montaż suchych zabudów (ścianki, sufity z karton gipsu)
+                    </li>
+                    <li className="flex text-sm lg:text-xl items-center mb-2">
+                        <span className="material-symbols-outlined mx-2 text-red">
+                            done
+                        </span>
+                        Układanie klinkierów, obsadzenie drzwi wen/zew, tynkowanie (gipsowe, cementowe), wymiana okien, docieplania,
+                    </li>
+                    <li className="flex text-sm lg:text-xl items-center mb-2">
+                        <span className="material-symbols-outlined mx-2 text-red">
+                            done
+                        </span>
+                        Czyszczenie metodą mechaniczną, mycie elewacji
+                    </li>
+                    <li className="flex text-sm lg:text-xl items-center mb-2">
+                        <span className="material-symbols-outlined mx-2 text-red">
+                            done
+                        </span>
+                        Czyszczenie kostki brukowej, czyszczenie elementów plastikowych, czyszcze paneli słonecznych
+                    </li>
                 </ul>
+            </div>
+
+
+            <div className="my-10 px-20 flex flex-col items-center justify-center">
+                <Typography className="text-3xl lg:text-5xl font-bold mb-10">
+                    Kontakt
+                </Typography>
+
+                <div className="flex flex-col items-center justify-center">
+                    <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center gap-2" >
+                        <Input
+                            type="text"
+                            value={subject}
+                            onChange={(e) => setSubject(e.target.value)}
+                            label="Temat"
+                            className="w-[200px] lg:w-[400px]"
+                        />
+                        <Textarea
+                            value={body}
+                            onChange={(e) => setBody(e.target.value)}
+                            label="Wiadomość"
+                            rows={10}
+                        />
+                        <Button className="bg-[#0CBFE1]" type="submit">Wyślij</Button>
+                    </form>
+                </div>
+
+                <div className="flex  items-center justify-center gap-4 mt-5">
+                    <Typography className="text-xl lg:text-3xl ">
+                        Telefon:
+                    </Typography>
+                    <Typography className="text-[#0CBFE1] text-xl lg:text-3xl font-bold ">
+                        +48 512-503-512
+                    </Typography>
+                </div>
+
+                <div className="flex  items-center justify-center gap-4 mt-5">
+                    <Typography className="text-xl lg:text-3xl">
+                        Email:
+                    </Typography>
+                    <Typography className="text-[#0CBFE1] text-xl lg:text-3xl font-bold ">
+                        dawidex@o2.pl
+                    </Typography>
+
+                </div>
+            </div>
+
+            <div className="bg-[#04434f] my-8 flex justify-center items-center">
+
+                <Typography className="text-[#f2f2f2] py-3">Created with</Typography>
+                <span className="material-symbols-outlined mx-[3px]">
+                    favorite
+                </span>
+                <Typography className="text-[#f2f2f2] py-3">by Bartz94</Typography>
             </div>
 
         </PageLayout>
