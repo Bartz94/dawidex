@@ -4,10 +4,11 @@ import { PageLayout } from "../components/PageLayout"
 import { HomePageCard } from "./components/HomePageCard"
 import { FormEvent, useState } from "react"
 import { Button, Input, Textarea } from "@material-tailwind/react"
+import ScrollToTop from "react-scroll-to-top";
 
 export const HomePage = () => {
     const { t } = useTranslation()
-    const [email, setEmail] = useState('dawidex@wp.pl');
+    const [email, _setEmail] = useState('dawidex@wp.pl');
     const [subject, setSubject] = useState('');
     const [body, setBody] = useState('');
 
@@ -19,6 +20,7 @@ export const HomePage = () => {
 
     return (
         <PageLayout>
+            {/* <BackToTopButton /> */}
             <div className='h-2/3 flex justify-center items-center bg-[url("../images/home-img-0.jpg")] bg-fixed bg-cover '>
                 <Typography className="text-3xl lg:text-5xl text-white  font-bold text-center">
                     Witamy w DAWIDEX - Twój partner w rewitalizacji przestrzeni i tworzeniu wymarzonych wnętrz!
@@ -141,7 +143,7 @@ export const HomePage = () => {
                             value={subject}
                             onChange={(e) => setSubject(e.target.value)}
                             label="Temat"
-                            className="w-[200px] lg:w-[400px]"
+                            className="w-[280px] lg:w-[500px]"
                         />
                         <Textarea
                             value={body}
@@ -154,19 +156,19 @@ export const HomePage = () => {
                 </div>
 
                 <div className="flex  items-center justify-center gap-4 mt-5">
-                    <Typography className="text-xl lg:text-3xl ">
+                    <Typography className="text-lg lg:text-3xl ">
                         Telefon:
                     </Typography>
-                    <Typography className="text-[#0CBFE1] text-xl lg:text-3xl font-bold ">
+                    <Typography className="text-[#0CBFE1] text-md lg:text-3xl font-bold ">
                         +48 512-503-512
                     </Typography>
                 </div>
 
                 <div className="flex  items-center justify-center gap-4 mt-5">
-                    <Typography className="text-xl lg:text-3xl">
+                    <Typography className="text-lg lg:text-3xl">
                         Email:
                     </Typography>
-                    <Typography className="text-[#0CBFE1] text-xl lg:text-3xl font-bold ">
+                    <Typography className="text-[#0CBFE1] text-md lg:text-3xl font-bold ">
                         dawidex@o2.pl
                     </Typography>
 
@@ -181,6 +183,9 @@ export const HomePage = () => {
                 </span>
                 <Typography className="text-[#f2f2f2] py-3">by Bartz94</Typography>
             </div>
+
+
+            <ScrollToTop className="flex justify-center items-center" smooth color="#0CBFE1" />
 
         </PageLayout>
     )

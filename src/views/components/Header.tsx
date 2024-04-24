@@ -1,5 +1,7 @@
+import { useNavigate } from "react-router"
 
 export const Header = () => {
+    const navigate = useNavigate()
     return (
         <div>
             <header className="flex bg-white  justify-around items-center flex-wrap sticky ">
@@ -9,13 +11,13 @@ export const Header = () => {
                 <nav>
                     <ul className="flex gap-8">
                         <li >
-                            <a className="text-xl lg:text-3xl hover:text-red-700" href="#">Strona główna</a>
+                            <a className="text-xl lg:text-3xl cursor-pointer hover:text-red-700" onClick={() => navigate('/')}>Strona główna</a>
                         </li>
                         <li>
-                            <a className="text-xl lg:text-3xl hover:text-red-700" href="#">Galeria</a>
+                            <a className="text-xl lg:text-3xl cursor-pointer hover:text-red-700" onClick={() => navigate('/gallery')}>Galeria</a>
                         </li>
                         <li>
-                            <a className="text-xl lg:text-3xl hover:text-red-700" href="#">Kontakt</a>
+                            <a className="text-xl lg:text-3xl cursor-pointer hover:text-red-700" onClick={() => navigate('/contact')}>Kontakt</a>
                         </li>
                     </ul>
                 </nav>
