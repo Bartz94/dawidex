@@ -34,13 +34,6 @@ export default withMT({
           DEFAULT: 'hsl(var(--secondary))',
         },
       },
-      width: {
-        '140': '40rem',
-        600: '600px',
-      },
-      height: {
-        800: '800px',
-      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
