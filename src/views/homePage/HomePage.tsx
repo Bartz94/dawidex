@@ -5,6 +5,7 @@ import { HomePageCard } from "./components/HomePageCard"
 import { FormEvent, useState } from "react"
 import { Button, Input, Textarea } from "@material-tailwind/react"
 import ScrollToTop from "react-scroll-to-top";
+import { Footer } from "../components/Footer"
 
 export const HomePage = () => {
     const { t } = useTranslation()
@@ -175,15 +176,7 @@ export const HomePage = () => {
                 </div>
             </div>
 
-            <div className="bg-[#04434f] my-8 flex justify-center items-center">
-
-                <Typography className="text-[#f2f2f2] py-3">Created with</Typography>
-                <span className="material-symbols-outlined mx-[3px]">
-                    favorite
-                </span>
-                <Typography className="text-[#f2f2f2] py-3">by Bartz94</Typography>
-            </div>
-
+            <Footer />
 
             <ScrollToTop className="flex justify-center items-center" smooth color="#0CBFE1" />
 
