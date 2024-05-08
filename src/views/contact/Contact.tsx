@@ -16,69 +16,45 @@ export const Contact = () => {
 
     return (
         <PageLayout >
-            <section className="flex justify-around items-center flex-wrap mx-20 mt-20 mb-[300px] gap-5">
+            <div className='h-full flex flex-wrap gap-4 justify-around items-center bg-[url("../images/home-img-0.jpg")] bg-fixed bg-cover '>
 
-                <div className="flex flex-col justify-center gap-4">
+                <div className="bg-[#f4f4f4] shadow-xl p-3 rounded-xl min-w-[250px]">
+
                     <Typography className="text-text-primary text-4xl font-medium text-center" >
                         Jeśli masz pytania, zapraszamy do kontaktu
                     </Typography>
-                    <div className="bg-[#f4f4f4] shadow-xl p-6 rounded min-w-[250px]">
-                        <div className="flex gap-4">
+                    <div className="flex gap-4">
 
-                            <div className="flex flex-col">
-                                <Typography className="text-lg lg:text-3xl ">
-                                    Telefon:
-                                </Typography>
-                                <Typography className="text-lg lg:text-3xl">
-                                    Email:
-                                </Typography>
-                                <Typography className="text-lg lg:text-3xl">
-                                    NIP:
-                                </Typography>
-
-                            </div>
-
-                            <div className="flex flex-col">
-                                <Typography className="text-[#0CBFE1] text-md lg:text-3xl font-bold ">
-                                    +48 512-503-512
-                                </Typography>
-                                <Typography className="text-[#0CBFE1] text-md lg:text-3xl font-bold ">
-                                    dawidex@o2.pl
-                                </Typography>
-                                <Typography className="text-[#0CBFE1] text-md lg:text-3xl font-bold ">
-                                    511703981
-                                </Typography>
-                            </div>
-                        </div>
-
-                        {/* <div className="flex gap-4">
-                            <Typography className="text-lg lg:text-3xl ">
+                        <div className="flex flex-col justify-center ">
+                            <Typography className="text-xl lg:text-3xl ">
                                 Telefon:
                             </Typography>
-                            <Typography className="text-[#0CBFE1] text-md lg:text-3xl font-bold ">
-                                +48 512-503-512
-                            </Typography>
-                        </div>
-                        <div className="flex gap-4">
-                            <Typography className="text-lg lg:text-3xl">
+                            <Typography className="text-xl lg:text-3xl">
                                 Email:
                             </Typography>
-                            <Typography className="text-[#0CBFE1] text-md lg:text-3xl font-bold ">
-                                dawidex@o2.pl
-                            </Typography>
-                        </div>
-                        <div className="flex gap-4">
-                            <Typography className="text-lg lg:text-3xl">
+                            <Typography className="text-xl lg:text-3xl">
                                 NIP:
                             </Typography>
-                            <Typography className="text-[#0CBFE1] text-md lg:text-3xl font-bold ">
+                        </div>
+                        <div className="flex flex-col">
+                            <Typography className="text-[#0CBFE1] text-xl lg:text-3xl font-bold ">
+                                +48 512-503-512
+                            </Typography>
+                            <Typography className="text-[#0CBFE1] text-xl lg:text-3xl font-bold ">
+                                dawidex@o2.pl
+                            </Typography>
+                            <Typography className="text-[#0CBFE1] text-xl lg:text-3xl font-bold ">
                                 511703981
                             </Typography>
-                        </div> */}
+                        </div>
                     </div>
+
                 </div>
 
-                <div className="bg-[#f4f4f4] shadow-xl p-6 rounded">
+                <div className="bg-[#f4f4f4] shadow-xl p-3 rounded-xl">
+                    <Typography className="text-text-primary text-4xl font-medium text-center mb-2" >
+                        Napisz do nas
+                    </Typography>
                     <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center gap-2" >
                         <Input
                             type="text"
@@ -96,7 +72,17 @@ export const Contact = () => {
                         <Button className="bg-[#0CBFE1]" type="submit">Wyślij</Button>
                     </form>
                 </div>
-            </section>
+
+
+            </div>
+
+
+            <div className="flex flex-col justify-center gap-4">
+
+
+            </div>
+
+            {/* </section> */}
 
             <Footer />
         </PageLayout>
