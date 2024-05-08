@@ -5,7 +5,7 @@ export const Header = () => {
     return (
         <div>
             <header className="flex bg-white  justify-around items-center flex-wrap sticky ">
-                <div className="flex place-self-start">
+                <div onClick={() => navigate('/')} className="flex place-self-start cursor-pointer">
                     <img src="/logo.png" alt="image" />
                 </div>
                 <nav>

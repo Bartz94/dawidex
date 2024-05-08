@@ -4,7 +4,6 @@ import { PageLayout } from "../components/PageLayout"
 import { HomePageCard } from "./components/HomePageCard"
 import { FormEvent, useState } from "react"
 import { Button, Input, Textarea } from "@material-tailwind/react"
-import ScrollToTop from "react-scroll-to-top";
 import { Footer } from "../components/Footer"
 
 export const HomePage = () => {
@@ -21,7 +20,6 @@ export const HomePage = () => {
 
     return (
         <PageLayout>
-            {/* <BackToTopButton /> */}
             <div className='h-2/3 flex justify-center items-center bg-[url("../images/home-img-0.jpg")] bg-fixed bg-cover '>
                 <Typography className="text-3xl lg:text-5xl text-white  font-bold text-center">
                     Witamy w DAWIDEX - Twój partner w rewitalizacji przestrzeni i tworzeniu wymarzonych wnętrz!
@@ -38,7 +36,7 @@ export const HomePage = () => {
                         Jesteśmy doświadczoną firmą remontowo-wykończeniową, która z pasją i precyzją odmienia każde pomieszczenie, nadając mu niepowtarzalny charakter i funkcjonalność.
                     </Typography>
                 </div>
-                <img src="/images/home-img1.jpg" alt="Opis grafiki" className="w-full lg:w-1/2 h-auto" />
+                <img src="/images/home-img1.jpg" alt="Opis grafiki" className="w-full lg:w-1/2 h-auto shadow-xl" />
             </div>
 
 
@@ -114,7 +112,7 @@ export const HomePage = () => {
                         <span className="material-symbols-outlined mx-2 text-red">
                             done
                         </span>
-                        Układanie klinkierów, obsadzenie drzwi wen/zew, tynkowanie (gipsowe, cementowe), wymiana okien, docieplania,
+                        Układanie klinkierów, obsadzenie drzwi wen/zew, tynkowanie (gipsowe, cementowe), wymiana okien, docieplania
                     </li>
                     <li className="flex text-sm lg:text-xl items-center mb-2">
                         <span className="material-symbols-outlined mx-2 text-red">
@@ -178,7 +176,6 @@ export const HomePage = () => {
 
             <Footer />
 
-            <ScrollToTop className="flex justify-center items-center" smooth color="#0CBFE1" />
 
         </PageLayout>
     )
